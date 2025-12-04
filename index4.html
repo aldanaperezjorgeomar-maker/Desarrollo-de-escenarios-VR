@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Bosque Nocturno VR • Invasión Zombi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style4.css" />
+
+  <!-- Importmap: Three.js + Addons (ESM) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.1/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.1/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- UI: contadores para zombis -->
+  <div id="hud">
+    <div class="badge">
+      <span class="icon">🧟</span>
+      <span>Zombis totales:</span>
+      <b id="totalZombies">0</b>
+    </div>
+    <div class="badge">
+      <span class="icon">⚔️</span>
+      <span>Eliminados:</span>
+      <b id="hitZombies">0</b>
+    </div>
+    <div class="badge" id="healthBadge">
+      <span class="icon">❤️</span>
+      <span>Salud:</span>
+      <b id="health">100</b>
+    </div>
+  </div>
+
+  <!-- Audio ambiente (se inicia al entrar a VR) -->
+  <audio id="ambient" src="assets/audio/forest_night.mp3" preload="auto" loop></audio>
+  <!-- Sonidos de zombis -->
+  <audio id="zombieGroan" preload="auto"></audio>
+
+  <canvas id="scene"></canvas>
+  <script type="module" src="main4.js"></script>
+</body>
+</html>
